@@ -4,7 +4,12 @@ public class Player extends Character implements KeyListener {
 	public Player(double x, double y, double vx, double vy ) {
 		super(x,y,vx,vy);
 	}
-
+    public void draw(MyFrame f) {
+        f.setColor(0, 128, 0);
+        f.fillRect(x, y + 20, 30, 10);
+        f.setColor(200, 200, 200);
+        f.fillRect(x + 10, y, 10, 30);
+    }
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO 自動生成されたメソッド・スタブ
@@ -22,8 +27,9 @@ public class Player extends Character implements KeyListener {
 			
 		}
 		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
-			GameWold.playerBullets.add(
+			GameWorld.playerBullets.add(
 					new PlayerBullet(x,y,0,-10) );
+            System.out.println("弾の数" + GameWorld.playerBullets.size());
 					
 		}
 				
