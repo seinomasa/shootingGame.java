@@ -15,12 +15,12 @@ public class CurveEnemy extends Enemy {
 		
 	}
 	public void draw(MyFrame f) {
-        super.move();
-        if (x < GameWorld.player.x) {
-            x++;
+        f.setColor(0, 0, 0);
+        f.fillOval(x, y, 30, 30);
+        f.setColor(200, 200, 200);
+        f.fillOval(x + 5, y, 20, 30);
+       
+        	
         }
-        if (x > GameWorld.player.x) {
-            x--; 
-        }
-	}
+    
 }
