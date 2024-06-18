@@ -5,18 +5,20 @@ public class GameFrame extends MyFrame {
 		GameWorld.player = new Player(100, 300, 0, 0);
 		addKeyListener(GameWorld.player);
 		GameWorld.playerBullets = new Vector<PlayerBullet>();
+		GameWorld.enemies = new Vector<Enemy>();
+		GameWorld.enemies.add(new EnemyBase(100, 50, 1, 0));
 		while (true) {
 			clear();
 			GameWorld.player.draw(this);
 			GameWorld.player.move();
 			moveplayerBullets();
+			moveEnemies();
 			sleep(0.033);
-			
-			
-		
+
 		}
-		
+
 	}
+
 	public void moveplayerBullets() {
 		int i = 0;
 		while (i < GameWorld.playerBullets.size()) {
@@ -28,7 +30,16 @@ public class GameFrame extends MyFrame {
                 GameWorld.playerBullets.remove(i);
             }  else {
             	i++;
+            
             }
+		}
+	}
+
+	public void moveEnemies() {
+		for (int i = 0; i < GameWorld.enemies.size(); i++) {
+			Enemy e = GameWorld.enemies.get(i);
+			e.draw(this);
+			e.move();
 		}
 	}
 }
