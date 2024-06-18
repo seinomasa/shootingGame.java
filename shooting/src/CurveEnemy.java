@@ -12,5 +12,15 @@ public class CurveEnemy extends Enemy {
 		if (x > GameWorld.player.x) {
 			x--;
 		}
+		
+	}
+	public void draw(MyFrame f) {
+        super.move();
+        if (x < GameWorld.player.x) {
+            x++;
+        }
+        if (x > GameWorld.player.x) {
+            x--; 
+        }
 	}
 }

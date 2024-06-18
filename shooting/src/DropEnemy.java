@@ -7,4 +7,7 @@ public class DropEnemy extends Enemy{
 		super.move();
 		vy = vy + 0.1;
 	}
-}
+    
+    }
+
+    
