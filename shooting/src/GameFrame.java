@@ -69,8 +69,11 @@ public class GameFrame extends MyFrame {
 				if (Math.abs(e.x - b.x) <= 30 &&
 						Math.abs(e.y - b.y) <= 30) {
 					System.out.println("あたり");
+					GameWorld.enemies.remove(j);
+				}else {
+					j++;
 				}
-				j++;
+				
 			}
 			i++;
 		}

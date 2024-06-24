@@ -14,7 +14,7 @@ public class EnemyBase extends Enemy {
 	public void move() {
 		super.move();
 		if (x > 300)
-			vx = 1;
+			vx = -1;
 		if (x < 100)
 			vx = 1;
 		if (Math.random()<0.05) {
