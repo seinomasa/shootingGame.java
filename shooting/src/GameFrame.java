@@ -13,6 +13,7 @@ public class GameFrame extends MyFrame {
 			GameWorld.player.move();
 			moveplayerBullets();
 			moveEnemies();
+			checkPlayerAndEnemies();
 			sleep(0.033);
 
 		}
@@ -41,5 +42,18 @@ public class GameFrame extends MyFrame {
 			e.draw(this);
 			e.move();
 		}
+		
 	}
+	public void checkPlayerAndEnemies() {
+	for (int i=0 ; i<GameWorld.enemies.size(); i++) {
+		Enemy e=GameWorld.enemies.get(i);
+		if(e.x==GameWorld.player.x &&
+		e.y==GameWorld.player.y) 
+		if (Math.abs(e.x-GameWorld.player.x)<=30 &&
+		    Math.abs(e.y-GameWorld.player.y)<=30){
+			System.out.println("やられた");
+			GameWorld.player.y=-1000;
+		} 
+	}
+}
 }
