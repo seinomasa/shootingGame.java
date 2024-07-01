@@ -33,7 +33,7 @@ public class GameFrame extends MyFrame {
 					drawString("ゲームオーバー！", 50, 200, 40);
 					if (GameWorld.enterPressed) {
 						GameWorld.stage = 1;
-						GameWorld.stage = 0;
+						GameWorld.stage = 1;
 						break;
 					}
 				}
